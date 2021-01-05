@@ -1,17 +1,16 @@
 package com.zajaczek.springDataExample;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="Mycar")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String mark;
     private String model;
+    @Enumerated(EnumType.STRING)
     private Color color;
 
     public Car() {
